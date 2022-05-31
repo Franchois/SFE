@@ -69,7 +69,6 @@ for(symbol in all_symbols){
   assign(x = symbol, value = cbind(get(symbol), ret))
 }
 
-#________Computing values
 # set the result data frame
 result <- data.frame(rho_ret = double(), rho_ret2 = double(),
                      rho_abs_ret = double(), S = double(), K = double(),
