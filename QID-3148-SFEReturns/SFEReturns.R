@@ -19,7 +19,7 @@ lapply(libraries, function(x) if (!(x %in% installed.packages()))
 lapply(libraries, library, quietly = TRUE, character.only = TRUE)
 
 # stocks symbols and full names
-GER <- c("DAX", "ADS.DE", "ALV.DE", "BAS.DE", "BAYN.DE", "BEI.DE", 
+GER <- c("^GDAXI", "ADS.DE", "ALV.DE", "BAS.DE", "BAYN.DE", "BEI.DE", 
          "BMW.DE", "CON.DE", "DTG.DE", "DBK.DE", "DPW.DE", "DTE.DE", "EOAN.DE",
          "FRE.DE", "HEN.DE", "LIND.DE", "MUV2.DE", "RWE.DE", "SAP.DE", "SIE.DE",
          "VOW.DE")
@@ -46,6 +46,7 @@ getSymbols(Symbols = all_symbols, src = "yahoo", from = "2002-01-01",
 
 # preparing data
 GB[1] <- "FTSE"
+GER[1] <- "GDAXI"
 all_symbols <- c(GER, GB)
 
 # remove any missing value at the head or the tail of the time series
@@ -106,7 +107,7 @@ colnames(result) <- c("rho(ret)", "rho(ret^2)", "rho(|ret|)", "S", "K", "JB",
 #--------------------#
 # Exporting the data #
 #--------------------#
-# for the german stocks 
+# for the german stocks
 write.csv(result[GER_full_names,], file = "ger.csv")
-# for the british stocks 
+# for the british stocks
 write.csv(result[GB_full_names,], file = "gb.csv")
