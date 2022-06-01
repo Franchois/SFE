@@ -21,7 +21,7 @@ lapply(libraries, library, quietly = TRUE, character.only = TRUE)
 # stocks symbols and full names
 GER <- c("^GDAXI", "ADS.DE", "ALV.DE", "BAS.DE", "BAYN.DE", "BEI.DE", 
          "BMW.DE", "CON.DE", "DTG.DE", "DBK.DE", "DPW.DE", "DTE.DE", "EOAN.DE",
-         "FRE.DE", "HEN.DE", "LIND.DE", "MUV2.DE", "RWE.DE", "SAP.DE", "SIE.DE",
+         "FRE.DE", "HEN.DE", "LIN.DE", "MUV2.DE", "RWE.DE", "SAP.DE", "SIE.DE",
          "VOW.DE")
 GER_full_names <- c("DAX", "Adidas", "Allianz", "BASF", "Bayer", "Beiersdorf", 
                     "BMW", "Continental", "Daimler", "Deutsche Bank", 
