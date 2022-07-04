@@ -14,18 +14,19 @@ Keywords: Frechet, GEV, Weibull, density, distribution, extreme-value, gumbel
 
 See also: SFEevt2, SFEevt2, SFEevt3
 
-Author: Zografia Anastasiadou
+Author: Zografia Anastasiadou, Konstantin Haeusler
 
 Author [Matlab]: Juergen Franke
 
-Submitted: Thu, June 04 2015 by Lukas Borke
+Submitted: 20220602 WKH
 
 Example: 'Gumbel distribution (solid line), Frechet distribution with parameter alpha=1/2 (dotted line) and Weibull distribution with parameter alpha=-1/2 (dash-dot line).'
+
 ```
 
-![Picture1](SFEevt-1_m.png)
+![Picture1](%20SFEevt1.png)
 
-![Picture2](SFEevt1.png)
+![Picture2](SFEevt-1_m.png)
 
 ### R Code
 ```r
@@ -47,9 +48,10 @@ x     = c(xneg, xpos)
 alpha = 1/2
 
 # Creating 3 types of densities via function "dgev" from package "evd"
-gumb = cbind(x, dgev(x))
-frec = cbind(x, dgev(x, 1, 0.5, alpha))
-weib = cbind(x, dgev(x, -1, 0.5, -alpha))
+   
+gumb = cbind(x, dgev(x,0,0.5,0))
+frec = cbind(x, dgev(x, 0, 0.5, alpha))
+weib = cbind(x, dgev(x, 0, 0.5, -alpha))
 
 # Plot
 plot(weib, type = "l", col = "blue", lwd = 3, lty = 4, xlab = "X", ylab = "Y", main = "Extreme Value Densities")
@@ -58,7 +60,7 @@ lines(gumb, type = "l", col = "black", lwd = 3)
 
 ```
 
-automatically created on 2018-05-28
+automatically created on 2022-06-08
 
 ### MATLAB Code
 ```matlab
@@ -98,4 +100,4 @@ hold off
 
 ```
 
-automatically created on 2018-05-28
+automatically created on 2022-06-08
